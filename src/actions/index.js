@@ -49,13 +49,11 @@ export const contactsLoaded = (newContacts) =>{
 export const fetchData = async (dispatch) => {
     const db = app.firestore();
     //const data = await db.collection("contacts").get();
-    const unsubscribe = db.collection("contacts").onSnapshot(snapshot=>{
+     return db.collection("contacts").onSnapshot(snapshot=>{
         const contactsData = [];
         snapshot.forEach(doc => contactsData.push({ ...doc.data(), id: doc.id }));
         dispatch(contactsLoaded(contactsData));
-        console.log(contactsData);
-    })
-    return unsubscribe;
+    });
     //const contacts = data.docs.map(doc => ({ ...doc.data(), id: doc.id }));
 
 };

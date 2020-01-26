@@ -39,7 +39,6 @@ function reducer(state=initialState, action) {
         }
 
         case 'ADD_CONTACT': {
-            console.log(action.payload);
             createDbContact(action.payload);
             return {
                 ...state,
@@ -114,7 +113,6 @@ const updateDbFavoriteStatus = (contact) => {
 };
 
 const deleteDbContact = (id) =>{
-    console.log(id);
     const db = app.firestore();
     db.collection('contacts').doc(id).delete();
 };
