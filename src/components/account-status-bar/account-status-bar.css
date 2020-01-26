@@ -1,0 +1,20 @@
+.account-status-bar {
+    float: right;
+    font-size: 1.1rem;
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.account-status-bar-title {
+    margin-right:0.5rem;
+    line-height: 35px;
+
+}
+
+.account-status-bar-button {
+    float: right;
+    margin-right: 0.5rem;
+}
+
+
